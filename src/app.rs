@@ -1,17 +1,17 @@
 use crate::common::{self, App};
 
+#[derive(Default)]
 pub struct MyApp {}
 
 impl App for MyApp {
     fn title() -> &'static str {
-        todo!()
+        "My App"
     }
 
     fn new(app: &mut common::System) -> Self {
-        todo!()
+        Default::default()
     }
 
     fn build_ui(&mut self, ctx: &egui::Context) {
-        todo!()
     }
 }
