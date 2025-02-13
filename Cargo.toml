@@ -1,0 +1,28 @@
+[package]
+name = "min-vulkan-template"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.39"
+winit = "0.30"
+ash = { version = "0.38", default-features = false, features = ["debug", "linked", "std"] }
+ash-window = "0.13"
+raw-window-handle = "0.6"
+egui = "0.31"
+egui_file = "0.22"
+egui-winit = "0.31"
+egui_extras = { version = "0.31", default-features = false, features = ["all_loaders", "datepicker"] }
+egui-ash-renderer = { version = "0.8.0", features = ["vk-mem"] }
+vk-mem = { version = "0.4", optional = true }
+env_logger = { version = "0.11.6", features = ["auto-color", "humantime"] }
+log = "0.4.25"
+
+[dev-dependencies]
+tracy-client = "0.18.0"
+
+[features]
+default = ["vk-mem"]
+
+[lints.rust]
+unexpected_cfgs = { level = "allow", check-cfg = ['cfg(profile)'] }
